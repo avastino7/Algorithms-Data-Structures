@@ -1,0 +1,35 @@
+import java.util.*;
+class decbinvect
+{
+    static Integer[] decbinvect1(int dec)
+    {Vector rem=new Vector();
+        int i,co=0;
+        for( i=0;dec>=2;i++)
+        { 
+            Integer objdec=(Integer)dec%2;
+            rem.addElement(objdec);
+
+     
+        dec=(int)dec/2
+            ;co++;
+
+
+
+        }
+        rem.addElement((Integer)dec);
+        Integer remar[]=new Integer[rem.size()];
+
+        rem.copyInto(remar);
+        Integer[] remarrev=new Integer[rem.size()];int c=0;
+        for(int j=co;j>=0;j--)
+        {
+
+            remarrev[c]=remar[j];c++;
+        }
+        return(remarrev);
+    }
+
+
+
+
+}
