@@ -1,0 +1,35 @@
+class NestedIterator {
+public:
+    int m=0,n=0;
+    vector<int>v;
+    void flatten(NestedInteger x)
+    {
+        if(x.isInteger())
+            v.push_back(x.getInteger());
+        else
+        {
+            for(auto i:x.getList())
+                flatten(i);
+        }
+        
+    }
+    NestedIterator(vector<NestedInteger> &a) 
+    {
+        for(auto i:a)
+            flatten(i);
+        n=v.size();
+    }
+    
+    int next() 
+    {
+        m++;
+        return v[m-1];
+    }
+    
+    bool hasNext() 
+    {
+        if(m==n)
+            return false;//reached capacity!
+        return true;
+    }
+};
